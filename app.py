@@ -1,15 +1,18 @@
 from flask import Flask, jsonify, request
-from flask_migrate import Migrate
+import os
 from models import db, Hero, Power, HeroPower
-from flask_cors import CORS
+try:
+    from flask_cors import CORS
+except Exception:
+    CORS = None
 
 app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///superheroes.db"
+basedir = os.path.abspath(os.path.dirname(__file__))
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///" + os.path.join(basedir, "superheroes.db")
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
+CORS(app) if CORS else None
 db.init_app(app)
-migrate = Migrate(app, db)
-CORS(app)
 
 
 # ---------------- HERO ROUTES ---------------- #
