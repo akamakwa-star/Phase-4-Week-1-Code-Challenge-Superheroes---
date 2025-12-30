@@ -33,6 +33,3 @@ Routes
 - `PATCH /powers/<id>` — update a power's description
 - `POST /hero_powers` — create a new hero_power relation
 
-Notes
-
-- Model validations are enforced via SQLAlchemy `@validates` decorators. Errors are returned as JSON.
