@@ -85,7 +85,7 @@ def create_hero_power():
         db.session.add(hero_power)
         db.session.commit()
 
-        return jsonify(hero_power.to_dict()), 201
+        return jsonify(hero_power.to_dict(include_power=True, include_hero=True)), 201
 
     except Exception:
         return jsonify({"errors": ["validation errors"]}), 422
