@@ -31,5 +31,5 @@ Routes
 - `GET /powers` — list powers
 - `GET /powers/<id>` — show a power
 - `PATCH /powers/<id>` — update a power's description
-- `POST /hero_powers` — create a new hero_power relation
+- `POST /hero_powers` — create a new hero_power relatio
 
