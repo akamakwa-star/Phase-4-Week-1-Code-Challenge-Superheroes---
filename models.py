@@ -26,7 +26,7 @@ class Hero(db.Model):
 
         if include_powers:
             data["hero_powers"] = [
-                hp.to_dict(include_power=True) for hp in self.hero_powers
+                hp.to_dict(include_power=True) for hp in self.hero_power
             ]
 
         return data
