@@ -46,7 +46,7 @@ def get_power_by_id(id):
     power = Power.query.get(id)
 
     if not power:
-        return jsonify({"error": "Power not found"}), 40
+        return jsonify({"error": "Power not found"}), 404
 
     return jsonify(power.to_dict()), 200
 
