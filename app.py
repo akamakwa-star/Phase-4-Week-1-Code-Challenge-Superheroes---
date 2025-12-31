@@ -88,7 +88,7 @@ def create_hero_power():
         return jsonify(hero_power.to_dict(include_power=True, include_hero=True)), 201
 
     except Exception:
-        return jsonify({"errors": ["validation errors"]}), 42
+        return jsonify({"errors": ["validation errors"]}), 422
 
 
 if __name__ == "__main__":
